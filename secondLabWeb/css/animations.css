@@ -1,0 +1,59 @@
+.menuText:hover {
+  font-style: italic;
+  font-weight: bold;
+}
+
+.textInDemoButton:hover {
+  color: #9c69e2;
+  transition: 0.9s;
+}
+.text:hover {
+  color: #9c69e2;
+  transition: 0.9s;
+}
+
+.learnMore:hover {
+  border: #f063b8 solid 1px;
+  background-color: #fff;
+  color: #f063b8;
+  transition: 0.8s;
+}
+.learnMoreFirst:hover {
+  color: #9c69e2;
+  transition: 0.8s;
+}
+.learnMoreSecond:hover {
+  color: #9c69e2;
+  transition: 0.8s;
+}
+.learnMoreThird:hover {
+  color: #9c69e2;
+  transition: 0.8s;
+}
+.learnMoreFourth:hover {
+  color: #9c69e2;
+  transition: 0.8s;
+}
+.learnMoreButton:hover {
+  background: #fff;
+  border: #9c69e2 solid 1px;
+  color: #9c69e2;
+  transition: 0.8s;
+}
+.endLearnMoreButton:hover {
+  background-color: #fff;
+  transition: 0.8s;
+  border: #f063b8 solid 1px;
+}
+.endLearnMoreText:hover {
+  color: #f063b8;
+  transition: 0.8s;
+}
+.endRequestDemoText:hover {
+  color: #9c69e2;
+  transition: 0.8s;
+}
+.message:hover {
+  width: 100px;
+  height: 100px;
+}
