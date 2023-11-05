@@ -2,7 +2,7 @@ import Header from './components/Header';
 import Heading from './components/Heading';
 import styles from "./App.module.css";
 import React from "react"
-import { Footer } from 'antd/es/layout/layout';
+import Footer  from './components/Footer';
 
 function App() {
   return (

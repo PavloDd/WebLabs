@@ -1,6 +1,7 @@
 import React from "react";
 import "./Heading.css"
 import CardItem from "./CardItem";
+import { Button } from "antd";
 
 function Heading(props) {
     return (
@@ -12,13 +13,12 @@ function Heading(props) {
                 </div>
                 <div className="headingText">
                     <h1 className="Title">"Penguin Paradise Tickets: Explore the Zoo!"</h1>
-                    <p>Ласкаво просимо до "Penguin Paradise Tickets" – ваш вхід до світу пригод та відкриттів!
-                        Придбайте квитки онлайн та долучайтеся до нас у захопливому зоопарку.
-                        Пінгвіни та інші чудові тварини чекають на ваших дітей.
-                        Розваги та вивчення природи – все це в нашому зоопарку!
-                        Забронюйте квитки зараз та розпочніть свою пригоду.
+                        <p>Welcome to Penguin Paradise – your ultimate guide to the world of amazing zoos!
+                            Unforgettable adventures await you and your family at our carefully curated zoos worldwide.
+                            With Penguin Paradise, purchasing tickets for zoo events and activities is easy and hassle-free.
                         </p>
-                    <button size="large" className="buttonShowMore">Show More</button>
+                    <Button style={{background: 'transparent', borderRadius: '20px', color: 'black', width: '180px',
+                            height: '30px', fontSize: '15px', cursor: 'pointer', backgroundColor: 'white', margin: '0 175px'}}>Show More</Button>
 
                 </div>
                 </div>
@@ -50,7 +50,7 @@ const data = [
   },
   {
     title: "Feldman Ecopark",
-    text:"Харків",
+    text:"Kharkiv",
     image:'https://www.sq.com.ua/img/news/2019/08/13/6.jpg',
     price: 88,
   },

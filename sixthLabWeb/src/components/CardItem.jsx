@@ -15,7 +15,8 @@ const CardItem = ({ title='No title.', text, imageSrc, price }) => (
     <Meta title={title} description={text} />
     <div className="cardFooter">
       <p>${price}</p>
-      <Button>Show More</Button>
+      <Button style={{background: 'transparent', borderRadius: '20px', color: 'black', width: '180px',
+      height: '30px', fontSize: '15px', cursor: 'pointer', backgroundColor: 'white'}}>Show More</Button>
     </div>
   </Card>
 );
