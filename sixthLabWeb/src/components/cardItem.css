@@ -3,3 +3,16 @@
     margin-top: 20px;
     justify-content: space-between;
 }
+
+.primaryButtonViewMore {
+    margin: 0 auto; 
+}
+
+.CardItem {
+    width: calc(33.333% - 20px); 
+    margin-bottom: 20px;
+}
+
+.cardPoles{
+    text-align: left
+}

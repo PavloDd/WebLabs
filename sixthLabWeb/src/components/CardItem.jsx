@@ -7,7 +7,7 @@ const { Meta } = Card;
 const CardItem = ({ title='No title.', text, imageSrc, price }) => (
   <Card
     hoverable
-    style={{ width: 350, borderRadius: "20px", backgroundColor: "lightgrey" }}
+    style={{ width: 350, borderRadius: "20px", backgroundColor: "lightgray" }}
     cover={
       <img style={{ borderRadius: "20px", width:"300px", height:"200px", margin: "25px" }} alt="example" src={imageSrc} />
     }

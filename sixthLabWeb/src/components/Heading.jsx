@@ -8,33 +8,49 @@ function Heading(props) {
         <>
             <div className={props.className}>
                 <div className="Heading">
-                <div>
-                    <img src='https://www.bodo.ua/resize/upload/files/cm-experience/103/102643/images_file/all_all_big-t1542032877-r1w768h425q90zc1.jpg' className="firstImage" alt='Penguin Paradise'/>
-                </div>
-                <div className="headingText">
-                    <h1 className="Title">"Penguin Paradise Tickets: Explore the Zoo!"</h1>
-                        <p>Welcome to Penguin Paradise – your ultimate guide to the world of amazing zoos!
-                            Unforgettable adventures await you and your family at our carefully curated zoos worldwide.
-                            With Penguin Paradise, purchasing tickets for zoo events and activities is easy and hassle-free.
-                        </p>
-                    <Button style={{background: 'transparent', borderRadius: '20px', color: 'black', width: '180px',
-                            height: '30px', fontSize: '15px', cursor: 'pointer', backgroundColor: 'white', margin: '0 175px'}}>Show More</Button>
-
-                </div>
+                    <div>
+                        <img src='https://www.bodo.ua/resize/upload/files/cm-experience/103/102643/images_file/all_all_big-t1542032877-r1w768h425q90zc1.jpg' className="firstImage" alt='Penguin Paradise'/>
+                    </div>
+                    <div className="headingText">
+                        <h1 className="Title">"Penguin Paradise Tickets: Explore the Zoo!"</h1>
+                            <p>Welcome to Penguin Paradise – your ultimate guide to the world of amazing zoos!
+                                Unforgettable adventures await you and your family at our carefully curated zoos worldwide.
+                                With Penguin Paradise, purchasing tickets for zoo events and activities is easy and hassle-free.
+                            </p>
+                    </div>
                 </div>
                 <div className="tileHeading">
                     <div>
-                        <div className='CardWrapper'>
-                            {data.map(({ title, text, image, price }, idx) => (
-                                <CardItem
-                                    title={title}
-                                    text={text}
-                                    imageSrc={image}
-                                    price={price}
-                                    id={idx}/>
+                        <div className='CardWrapper' key={data.title}>
+                                {data.map(({ title, text, image, price }, idx) => (
+                                    <CardItem
+                                        title={title}
+                                        text={text}
+                                        imageSrc={image}
+                                        price={price}
+                                        id={idx}/>
                             ))}
                         </div>
                     </div>
+                </div>
+                <div>
+                    <Button
+                    style={{
+                        background: 'transparent',
+                        backgroundColor: 'lightgray',
+                        borderRadius: '20px',
+                        color: 'black',
+                        width: '250px',
+                        height: '45px',
+                        fontSize: '25px',
+                        cursor: 'pointer',
+                        margin: '50px 600px',
+                        justifyContent: 'center',
+                    }}
+                    >
+                    Show All
+                    </Button>
+
                 </div>
             </div>
         </>
