@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Zoos</title>
+    <link rel="stylesheet" href="/public/css/styles.css">
+
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li tabindex="0" class="nav__button"><a>Zoos</a></li>
+            <li tabindex="0" class="nav__button"><a>Create zoo</a></li>
+            <li tabindex="0" class="nav__button"><a >Edit zoo</a></li>
+            <div tabindex="0" class="nav__button "><a id = "total__area">Total Area: 0</a></div>
+            <button tabindex="0" class="nav__button" onclick="SortZoos(showedlist)">Sort zoos by area</button>
+            <button tabindex="0" class="nav__button" onclick="restore()">Restore</button>
+
+        </ul>
+        <form id="find">
+            <input type="text" name="query" id="find__title">
+            <button type="button" onclick="SearchZoos()">Find</button>
+        </form>
+    </nav>
+    <div id="container">
+        <form class="sidebar" id="zooform">
+            <h5 id="create__title">Create zoo</h5>
+            <div class="create__input">
+                <label for="title__input" class="label__form">Name</label>
+                <input type="text" id="title__input" class="input__form" name="title" required>
+            </div>
+            <div class="create__input">
+                <label for="location__input" class="label__form">Location</label>
+                <input type="text" id="location__input" class="input__form" name="location" required>
+            </div>
+            <div class="create__input">
+                <label for="area__input" class="label__form">Area</label>
+                <input type="number" id="area__input" class="input__form"name="area" required>
+            </div>
+            <div class="create__input">
+                <label for="capacity__input" class="label__form">Capacity</label>
+                <input type="number" id="capacity__input" class="input__form"name="capacity" required>
+            </div>
+            <button id="submit__button" type="submit" class="submit__button" onclick="saveZoo()" >Submit</button>
+
+            <div class="edit hide">
+                <h5 id="edit__title">Edit zoo</h5>
+                <div class="create__input">
+                    <label for="title__input__edit" class="edit__form">New name</label>
+                    <input type="text" id="title__input__edit" class="input__form" placeholder=${title}>
+                </div>
+                <div class="create__input">
+                    <label for="location__input__edit" class="edit__form">New location</label>
+                    <input type="text" id="location__input__edit" class="input__form">
+                </div>
+                <div class="create__input">
+                    <label for="area__input__edit" class="edit__form">New area</label>
+                    <input type="number" id="area__input__edit" class="input__form">
+                </div>
+                <div class="create__input">
+                    <label for="capacity__input__edit" class="edit__form">New capacity</label>
+                    <input type="number" id="capacity__input__edit" class="input__form">
+                </div>
+                <button id="submit__edit__button" type="submit" class="submit__button" onclick="saveEdit()">Submit</button>
+                <button id="cancel__button" type="submit" class="submit__button" onclick="cancelEdit()">Cancel</button>
+            </div>
+        </form>
+        <main>
+            <div id="zoolist">
+                
+            </div>
+        </main>
+    </div>
+    <script src="/public/js/api.js"></script>
+    <script src="/public/js/creation.js"></script>
+    <script src="/public/js/update.js"></script>
+    <script src="/public/js/manipulations.js"></script>
+    <script src="/public/js/display-zoos.js"></script>
+    <script src="/public/js/index.js"></script>
+</body>
+
+</html>
