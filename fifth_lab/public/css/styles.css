@@ -1,0 +1,255 @@
+/* Reset margin and padding for all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#container {
+  display: grid;
+  grid-template-columns: 300px 1fr; /* Sidebar takes 300px, the rest is for zoolist */
+  gap: 20px; /* Add spacing between sidebar and zoolist */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+  margin: 0;
+}
+
+nav {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+  display: flex;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  width: 70%;
+}
+
+li {
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.nav__button {
+  padding: 10px 15px;
+  background-color: #ff6f61;
+  border-radius: 5px;
+  color: #fff;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.nav__button:hover {
+  background-color: #ff4136;
+}
+
+#find {
+  display: flex;
+  align-items: center;
+}
+
+#find input[type="text"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+  width: 200px;
+}
+
+#find button {
+  padding: 10px 15px;
+  background-color: #ff6f61;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#find button:hover {
+  background-color: #ff4136;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.sidebar {
+  width: 300px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+#zooform h5 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.create__input {
+  margin-bottom: 15px;
+}
+
+.create__input label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.create__input input[type="text"],
+.create__input input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.submit__button {
+  padding: 10px 20px;
+  background-color: #ff6f61;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit__button:hover {
+  background-color: #ff4136;
+}
+
+
+.edit h5 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.edit__button {
+  margin-right: 10px;
+}
+
+#zoolist {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.card {
+  width: calc(33.33% - 20px);
+  margin-right: 20px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  margin-bottom: 5px;
+}
+
+
+
+.card__body {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  margin: 20px;
+  width: 300px;
+}
+
+.card__title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.card__zoo__location,
+.card__zoo__area,
+.card__zoo__capacity {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.delete__button,
+.edit__button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: #ff6f61;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.delete__button:hover,
+.edit__button:hover {
+  background-color: #ff4136;
+}
+
+.edit {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#edit__title {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.edit__form {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input__form {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.submit__button,
+.cancel__button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: background-color 0.3s;
+}
+
+.submit__button:hover,
+.cancel__button:hover {
+  background-color: #0056b3;
+}
+
+.hide{
+  display: none;
+}

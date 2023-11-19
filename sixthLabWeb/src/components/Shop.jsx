@@ -69,7 +69,7 @@ function Shop(props) {
     popularityRate: 10,
       description: '+380-50-464-42-12',
         },
-  
+   
 ];
 
     return <>
