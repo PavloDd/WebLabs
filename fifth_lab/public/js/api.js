@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:5500/api";
+const BASE_URL = "http://localhost:5501/api";
 
 const baseRequest = async ({
     pathUrl = "/zoos",
@@ -18,7 +18,7 @@ const baseRequest = async ({
         }
 
         const response = await fetch(`${BASE_URL}${pathUrl}`, reqParams);
-
+        console.log(response);
         if (!response.ok) {
             throw new Error(`HTTP Error: ${response.status} - ${response.statusText}`);
         }
@@ -34,6 +34,7 @@ const baseRequest = async ({
 
 const getAllZoos = async () => {
     const rawResponse = await baseRequest({ method: "GET" });
+    console.log('Response from server:', rawResponse);
     const jsonData = await rawResponse.json();
     return jsonData;
 }
