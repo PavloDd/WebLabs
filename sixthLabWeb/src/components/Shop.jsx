@@ -37,6 +37,7 @@ function Shop(props) {
         setSelectedValuePopularity(value);
     };
 
+    console.log(zooData);
 
     return <>
         <div className={props.className}>
@@ -64,23 +65,13 @@ function Shop(props) {
                             placeholder='by popularity' />
                     </li>
                     <li className='buttonApply'>
-                        <PrimaryButton onClick={() => console.log('Button clicked')}>
+                        {/* <PrimaryButton onClick={() => console.log('Button clicked')}>
                             Apply
-                        </PrimaryButton>
+                        </PrimaryButton> */}
                     </li>
                 </ul>
                 <ul className='CardItemsShop'>
-                    {zooData.map((item) => (
-                        <CardItemShop
-                            key={item.id}
-                            title={item.title}
-                            location={item.location}
-                            imageSrc={item.image}
-                            price={item.price}
-                            popularityRate={item.rating}
-                            phoneNumber={item.phone_number}
-                            />
-                        ))}
+                    {zooData.map((item) => (<CardItemShop key={item.id} item={item}/>))}
                 </ul>
             </div>
         </div>

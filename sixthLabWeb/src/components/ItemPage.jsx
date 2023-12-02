@@ -1,22 +1,17 @@
 import React from "react";
-import { useParams } from "react-router-dom";
-import ZooData from "./ZooData";
+import {useLocation} from 'react-router-dom';;
 
 function ItemPage() {
-    const { id } = useParams();
-    const zooData = ZooData();
-    const item = zooData.find((zoo) => zoo.id.toString() === { id }.toString());
-
-    console.log(`ID itampage:`, id);
+    const location = useLocation();
+    const item = location.state;
     console.log(item);
-    console.log(zooData);
     
     return (
         <>  
         <p>Item ID: {item.id}</p>
         <p>Item name: {item.title}</p>
         <p>Item location: {item.location}</p>
-            {/* <p>ItemID = {id}</p>   */}
+            <p>ItemID = {item.id}</p>  
         </>
     );
 }

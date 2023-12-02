@@ -48,7 +48,6 @@ function Heading(props) {
                     </div>
                 </div>
                 <div className="tileHeading">
-                    
                      <div>
                         <div className='CardWrapper'>
                             {zooData.map((item) => {
