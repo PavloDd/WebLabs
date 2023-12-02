@@ -5,7 +5,7 @@ import './cardItem.css';
 
 const { Meta } = Card;
 
-const CardItemShop = ({ title='No title.', text, imageSrc, price, popularityRate, description }) => (
+const CardItemShop = ({ id, title='No title.', location, imageSrc, price, popularityRate, phoneNumber }) => (
   <Card
     hoverable
     style={{ width: "350px", height: "500px", borderRadius: "20px", backgroundColor: "lightgray" }}
@@ -15,11 +15,11 @@ const CardItemShop = ({ title='No title.', text, imageSrc, price, popularityRate
   >
     <Meta title={title}/>
     <div className="cardFooterShop">
-        <p className="cardPoles">{text}</p>   
+        <p className="cardPoles">{location}</p>   
         <p className="cardPoles">${price}</p>
         <p className="cardPoles">Popularity Rate - {popularityRate}</p>
-        <p className="cardPoles">{description}</p>    
-        <PrimaryButton className='primaryButtonViewMore' onClick={() => console.log('Button clicked')}>
+        <p className="cardPoles">{phoneNumber}</p>    
+        <PrimaryButton className='primaryButtonViewMore' onClick={() => console.log('Button clicked')} id={id}>
             View more
         </PrimaryButton>
     </div>

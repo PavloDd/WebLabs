@@ -1,25 +1,37 @@
-import React, { useState, useEffect } from "react";
-import axios from 'axios'
+import React from "react";
+import { Link } from "react-router-dom";
 import "./Heading.css"
 import CardItem from "./CardItem";
 import { Button } from "antd";
-import 'C:/Users/Lenovo/WebLabs/sixthLabWeb/src/backend/server'
+import ZooData from './ZooData';
 
 function Heading(props) {
-    const [zooData, setZooData] = useState([]);
-    
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const { data } = await axios.get('http://localhost:3001/api/zoos');
-                setZooData(data);
-            } catch (error) {
-                console.error('Error fetching zoo data:', error);
-            }
-        };
 
-        fetchData();
-    }, []);
+    const zooData = ZooData();
+    const showAllButton = () => {
+                    return (
+                        <div>
+                        <Link to="/Shop">
+                            <Button
+                            style={{
+                                background: 'transparent',
+                                backgroundColor: 'lightgray',
+                                borderRadius: '20px',
+                                color: 'black',
+                                width: '250px',
+                                height: '45px',
+                                fontSize: '25px',
+                                cursor: 'pointer',
+                                margin: '50px 0 0 600px', // Adjusted margin values
+                                justifyContent: 'center',
+                            }}
+                            >
+                            Show All
+                            </Button>
+                        </Link>
+                        </div>
+                    );
+                    };
     return (
         <>
             <div className={props.className}>
@@ -36,63 +48,26 @@ function Heading(props) {
                     </div>
                 </div>
                 <div className="tileHeading">
-                    <div>
+                    
+                     <div>
                         <div className='CardWrapper'>
-                                {zooData.map(({ title, text, image, price }) => (
+                            {zooData.map((item) => {
+                                return(
                                     <CardItem
-                                        key={id}
-                                        title={title}
-                                        text={text}
-                                        imageSrc={image}
-                                        price={price}
-                                    />
-                            ))}
+                                    id={item.id}  
+                                    key={item.id}
+                                    title={item.title}
+                                    location={item.location}
+                                    imageSrc={item.image}
+                                    price={item.price}
+                                />)
+                            })}
                         </div>
                     </div>
                 </div>
-                <div>
-                    <Button
-                    style={{
-                        background: 'transparent',
-                        backgroundColor: 'lightgray',
-                        borderRadius: '20px',
-                        color: 'black',
-                        width: '250px',
-                        height: '45px',
-                        fontSize: '25px',
-                        cursor: 'pointer',
-                        margin: '50px 600px',
-                        justifyContent: 'center',
-                    }}
-                    >
-                    Show All
-                    </Button>
-
-                </div>
+                {showAllButton()}
             </div>
         </>
     )
 }
-
-// const data = [
-//   {
-//     title: "Zoo of XII monthes",
-//     text: "Kyiv",
-//     image:'https://beton.kovalska.com/wp-content/uploads/2021/09/zoo-1.jpg',
-//     price: 90,
-//   },
-//   {
-//     title: "Feldman Ecopark",
-//     text:"Kharkiv",
-//     image:'https://www.sq.com.ua/img/news/2019/08/13/6.jpg',
-//     price: 88,
-//   },
-//   {
-//     title: "Kyiv Zoo",
-//     text:"Kyiv",
-//     image:'https://vechirniy.kyiv.ua/uploads/2022/11/24/637f3aed6ee8b.jpg',
-//     price: 75,
-//   },
-// ];
-
 export default Heading;

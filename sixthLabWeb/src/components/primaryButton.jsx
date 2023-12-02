@@ -1,11 +1,20 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const PrimaryButton = ({ onClick, children }) => {
+
+const PrimaryButton = ({item, children }) => {
+  const navigate = useNavigate();
+  console.log(item);
+  const id = {item}
+  
+  const handleClick = () => {
+    navigate('item/:item.id}')
+  }  
   return (
     <button
       style={{background: 'transparent', borderRadius: '20px', color: 'black', width: '180px',
       height: '30px', fontSize: '15px', cursor: 'pointer', backgroundColor: 'white'}}
-      onClick={onClick}
+      onClick={handleClick}
     >
       {children}
     </button>

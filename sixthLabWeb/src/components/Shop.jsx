@@ -1,15 +1,17 @@
 import {Select} from 'antd';
-import React, {useState} from 'react';
+import React, { useState} from 'react';
 import './Shop.css'
 import './Select'
 import PrimaryButton from './primaryButton';
 import './CardItemShop';
 import CardItemShop from './CardItemShop';
+import ZooData from './ZooData';
 
 function Shop(props) {
     const [selectedValueABC, setSelectedValueABC] = useState(null);
     const [selectedValuePrice, setSelectedValuePrice] = useState(null);
     const [selectedValuePopularity, setSelectedValuePopularity] = useState(null);
+    const zooData = ZooData();
 
     const optionsABC = [
         { value: 'A-Z', label: 'A-Z' },
@@ -35,42 +37,6 @@ function Shop(props) {
         setSelectedValuePopularity(value);
     };
 
-    const data = [
-  {
-    title: "Zoo of XII monthes",
-    text: "Kyiv",
-    image:'https://beton.kovalska.com/wp-content/uploads/2021/09/zoo-1.jpg',
-    price: 90,
-    popularityRate: 7,
-    description: '+380-50-464-12-12',
-    
-  },
-  {
-    title: "Feldman Ecopark",
-    text:"Kharkiv",
-    image:'https://www.sq.com.ua/img/news/2019/08/13/6.jpg',
-    price: 88,
-    popularityRate: 9,
-    description: '+380-50-464-22-12',
-  },
-  {
-    title: "Kyiv Zoo",
-    text:"Kyiv",
-    image:'https://vechirniy.kyiv.ua/uploads/2022/11/24/637f3aed6ee8b.jpg',
-    price: 75,
-    popularityRate: 10,
-      description: '+380-50-464-42-12',
-  },
-  {
-    title: "Kyiv Zoo",
-    text:"Kyiv",
-    image:'https://vechirniy.kyiv.ua/uploads/2022/11/24/637f3aed6ee8b.jpg',
-    price: 75,
-    popularityRate: 10,
-      description: '+380-50-464-42-12',
-        },
-   
-];
 
     return <>
         <div className={props.className}>
@@ -104,14 +70,17 @@ function Shop(props) {
                     </li>
                 </ul>
                 <ul className='CardItemsShop'>
-                    {data.map(item =>(
-                        <li key={item.title}>
-                            <CardItemShop
-                                title={item.title} text={item.text} imageSrc={item.image}
-                                price={item.price} popularityRate={item.popularityRate}
-                                description={item.description}
+                    {zooData.map((item) => (
+                        <CardItemShop
+                            key={item.id}
+                            title={item.title}
+                            location={item.location}
+                            imageSrc={item.image}
+                            price={item.price}
+                            popularityRate={item.rating}
+                            phoneNumber={item.phone_number}
                             />
-                        </li>))}
+                        ))}
                 </ul>
             </div>
         </div>

@@ -1,5 +1,5 @@
 const express = require('express');
-const mysql = require('mysql');
+const mysql = require('mysql2');
 const cors = require('cors');
 const app = express();
 const port = 3001;
@@ -11,6 +11,7 @@ const connection = mysql.createConnection({
     user: 'root',
     password: 'P132465798',
     database: 'penguin_paradise',
+    port: 3306,
 });
 
 connection.connect(err => {
@@ -22,8 +23,8 @@ connection.connect(err => {
     }
 });
 
-app.get('/api/zoos', (res, req) => {
-    const query = 'SELECT id, title, location, image, price FROM zoos';
+app.get('/api/zoos', (req, res) => {
+    const query = 'SELECT id, title, location, image, price, phone_number, rating FROM zoos';
 
     connection.query(query, (err, results) => {
         if(err) {
@@ -37,5 +38,5 @@ app.get('/api/zoos', (res, req) => {
 });
 
 app.listen(port, () => {
-    console.log('Server is running on port ${port}');
+    console.log("Server is running on port ${port}");
 });
