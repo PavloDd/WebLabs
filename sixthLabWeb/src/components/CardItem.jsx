@@ -5,21 +5,18 @@ import PrimaryButton from "./primaryButton";
 
 const { Meta } = Card;
 
-const CardItem = ({item }) => {
-  console.log('ID:', item.id);
-
+const CardItem = ({item}) => {
   return (
     <Card
       hoverable
       style={{ width: 350, borderRadius: "20px", backgroundColor: "lightgray" }}
       cover={
-        <img style={{ borderRadius: "20px", width: "300px", height: "200px", margin: "25px" }} alt="example" src={item.image} />
+        <img src ={item.image} style={{ borderRadius: "20px", width: "300px", height: "200px", margin: "25px" }}  alt="example"/>
       }
     >
       <Meta title={item.title} description={item.location} />
       <div className="cardFooter">
         <p>${item.price}</p>
-        <PrimaryButton item = {item} >View More</PrimaryButton>
       </div>
     </Card>
   );
