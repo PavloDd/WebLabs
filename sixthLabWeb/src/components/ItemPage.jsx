@@ -1,15 +1,20 @@
 import "./itemPage.css"
 import React from "react";
+<<<<<<< HEAD
 import { useLocation, Link } from 'react-router-dom';
 import { useState } from "react";
 import Select from "./Select";
 import { Button } from "antd";
 
+=======
+import {useLocation} from 'react-router-dom';;
+>>>>>>> 4ba83cb8ff7213ff10139931a08bd8c25145b131
 
 function ItemPage() {
     const location = useLocation();
     const item = location.state;
     console.log(item);
+<<<<<<< HEAD
     const [selectedValueNumber, setSelectedValueNumber] = useState(null);
 
     const backToShopButton = () => {
@@ -77,6 +82,16 @@ function ItemPage() {
             </ul>
            
         </div>
+=======
+    
+    return (
+        <>  
+        <p>Item ID: {item.id}</p>
+        <p>Item name: {item.title}</p>
+        <p>Item location: {item.location}</p>
+            <p>ItemID = {item.id}</p>  
+        </>
+>>>>>>> 4ba83cb8ff7213ff10139931a08bd8c25145b131
     );
 }
 export default ItemPage;

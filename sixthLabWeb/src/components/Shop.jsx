@@ -58,6 +58,7 @@ function Shop(props) {
         setSelectedValuePopularity(value);
     };
 
+<<<<<<< HEAD
     const handleApplyFilter = () => {
     // Apply filtering logic based on selected values
     let tempFilteredData = zooData;
@@ -142,6 +143,44 @@ function Shop(props) {
                         )}
                     </ul>
                 </div>
+=======
+    console.log(zooData);
+
+    return <>
+        <div className={props.className}>
+            <div className='Shop'>
+                <ul style={{margin:'50px 50px'}}>
+                    <li className='filters'>
+                        <Select
+                            options={optionsABC}
+                            value={selectedValueABC}
+                            onChange={handleSelectChangeABC}
+                            placeholder='by alphabet' />
+                    </li>
+                    <li className='filters'>
+                        <Select
+                            options={optionsPrice}
+                            value={selectedValuePrice}
+                            onChange={handleSelectChangePrice}
+                            placeholder='by price' />
+                    </li>
+                    <li className='filters'>
+                        <Select
+                            options={optionsPopularity}
+                            value={selectedValuePopularity}
+                            onChange={handleSelectChangePopularity}
+                            placeholder='by popularity' />
+                    </li>
+                    <li className='buttonApply'>
+                        {/* <PrimaryButton onClick={() => console.log('Button clicked')}>
+                            Apply
+                        </PrimaryButton> */}
+                    </li>
+                </ul>
+                <ul className='CardItemsShop'>
+                    {zooData.map((item) => (<CardItemShop key={item.id} item={item}/>))}
+                </ul>
+>>>>>>> 4ba83cb8ff7213ff10139931a08bd8c25145b131
             </div>
         </>
     );
