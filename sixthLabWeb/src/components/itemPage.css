@@ -1,0 +1,30 @@
+h1{
+    text-align: center;
+}
+.itemPageCard{
+    list-style: none;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    margin: 20px auto;
+}
+.itemPagePole{
+   font-size: 28px;
+   margin-top: 30px;
+}
+
+.itemPageImage{
+    float: left;
+}
+
+.itemPagePoles{
+    float: right;
+}
+
+/* Визначте кольори для плейсхолдера за вашими потребами */
+.select-selection-placeholder {
+  color: #999; /* Встановіть бажаний колір для плейсхолдера */
+}
+ .addAndGoToCartButtons{
+    margin-left: 85px;
+ }
