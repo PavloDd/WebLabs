@@ -7,3 +7,19 @@
     justify-content: space-between;
     flex-wrap: wrap;
 }
+
+.Items {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.CardWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px; /* Зазначте відстань між елементами, яку ви вважаєте належною */
+}
+
+.CardItem {
+  width: calc(33.33% - 16px); /* 33.33% для того, щоб в ряду було три елемента, і віднімаємо відстань між елементами */
+  margin-bottom: 16px; /* Зазначте відстань між рядами, яку ви вважаєте належною */
+}

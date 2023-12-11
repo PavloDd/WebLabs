@@ -25,6 +25,6 @@ h1{
 .select-selection-placeholder {
   color: #999; /* Встановіть бажаний колір для плейсхолдера */
 }
- .selectAndButtonItemPage{
+ .addAndGoToCartButtons{
     margin-left: 85px;
  }

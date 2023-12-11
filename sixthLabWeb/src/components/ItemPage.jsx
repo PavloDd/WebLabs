@@ -1,21 +1,27 @@
 import "./itemPage.css"
 import React from "react";
-<<<<<<< HEAD
-import { useLocation, Link } from 'react-router-dom';
+import { useLocation, Link, useNavigate } from 'react-router-dom';
 import { useState } from "react";
-import Select from "./Select";
 import { Button } from "antd";
+import { useDispatch } from 'react-redux';
+import { addItem } from './redux/actions';
 
-=======
-import {useLocation} from 'react-router-dom';;
->>>>>>> 4ba83cb8ff7213ff10139931a08bd8c25145b131
 
 function ItemPage() {
+    const dispatch = useDispatch();
     const location = useLocation();
+    const navigation = useNavigate();
     const item = location.state;
     console.log(item);
-<<<<<<< HEAD
     const [selectedValueNumber, setSelectedValueNumber] = useState(null);
+
+    const handleAddToCartButton = () => {
+        dispatch(addItem(item))
+    };
+
+    const handleGoToCartButton = () => {
+        navigation('/cart')
+    };
 
     const backToShopButton = () => {
                     return (
@@ -43,13 +49,6 @@ function ItemPage() {
                     );
                     };
 
-    const optionsValueNumber = [
-        { value: 1, label: '1' },
-        { value: 2, label: '2' },
-        { value: 3, label: '3' },
-        { value: 4, label: '4' },
-        { value: 5, label: '5' },
-    ];
 
      const handleSelectChangeValue= (value) => {
         setSelectedValueNumber(value);
@@ -65,16 +64,12 @@ function ItemPage() {
                 <li >
                     <div className="itemPagePoles">
                         <p className="itemPagePole">Location:{item.location}</p>
-                        <p className="itemPagePole">Price:{item.price}$</p>
-                        <p className="itemPagePole">Popularity Rating:{item.rating}/10</p>
+                        <p className="itemPagePole">Ticket price:{item.price}$</p>
+                        <p className="itemPagePole">Popularity Rate:{item.rating}/10</p>
                         <p className="itemPagePole">Contacts:{item.phone_number}</p>
-                        <div className="selectAndButtonItemPage">
-                            <Select className='selectItemPage'
-                            options={optionsValueNumber}
-                            value={selectedValueNumber}
-                            onChange={handleSelectChangeValue}
-                            placeholder='Tickets' />
-                            <Button>Proceed</Button>
+                        <div className="addAndGoToCartButtons">
+                            <Button onClick={handleAddToCartButton}>Add to cart</Button>
+                            <Button onClick={handleGoToCartButton}>Go to cart</Button>
                         </div>
                         {backToShopButton()}
                     </div>
@@ -82,16 +77,6 @@ function ItemPage() {
             </ul>
            
         </div>
-=======
-    
-    return (
-        <>  
-        <p>Item ID: {item.id}</p>
-        <p>Item name: {item.title}</p>
-        <p>Item location: {item.location}</p>
-            <p>ItemID = {item.id}</p>  
-        </>
->>>>>>> 4ba83cb8ff7213ff10139931a08bd8c25145b131
     );
 }
 export default ItemPage;

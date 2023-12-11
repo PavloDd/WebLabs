@@ -8,9 +8,13 @@
     margin: 0 auto; 
 }
 
-.CardItem {
-    width: calc(33.333% - 20px); 
-    margin-bottom: 20px;
+.Card {
+  width: 350px;
+  border-radius: 20px;
+  background-color: lightgray;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  width: calc(33.333% - 20px); 
 }
 
 .cardPoles{

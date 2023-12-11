@@ -1,18 +1,17 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, {useState} from "react";
 import "./Heading.css"
 import CardItem from "./CardItem";
 import { Button } from "antd";
 import ZooData from './ZooData';
 
 function Heading(props) {
-
+    const [showAll, setShowAll] = useState(false);
     const zooData = ZooData();
+    const zooDataToShow = showAll ? zooData : zooData.slice(0, 3);
     const showAllButton = () => {
                     return (
                         <div>
-                        <Link to="/Shop">
-                            <Button
+                            <Button onClick={() => setShowAll(true)}
                             style={{
                                 background: 'transparent',
                                 backgroundColor: 'lightgray',
@@ -28,7 +27,7 @@ function Heading(props) {
                             >
                             Show All
                             </Button>
-                        </Link>
+                        
                         </div>
                     );
                     };
@@ -48,17 +47,15 @@ function Heading(props) {
                     </div>
                 </div>
                 <div className="tileHeading">
-                     <div>
+                    <div className="Items">
                         <div className='CardWrapper'>
-                            {zooData.map((item) => {
-                                return(
-                                    <CardItem item = {item}
-                                />)
-                            })}
+                        {zooDataToShow.map((item) => (
+                            <CardItem item={item} key={item.id} />
+                        ))}
                         </div>
                     </div>
+                    {showAllButton()}
                 </div>
-                {showAllButton()}
             </div>
         </>
     )

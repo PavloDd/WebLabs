@@ -17,14 +17,14 @@ function Header(props) {
                     <ul>
                         <li><NavLink exact to='/' className='selected'>Home</NavLink></li>
                         <li><NavLink exact to='/shop' className='selected'>Shop</NavLink></li>
-                        <li><NavLink exact to='/blog' className='selected'>Blog</NavLink></li>
+                        <li><NavLink exact to='/cart' className='selected'>Cart</NavLink></li>
                         <li><NavLink exact to='/contact' className='selected'>Contact</NavLink></li>
                     </ul>
                     <Routes>
                         <Route path='/Shop'>
                             {/* <div></div> */}
                         </Route>
-                        <Route path='/blog'>
+                        <Route path='/cart'>
                             {/* <div></div> */}
                         </Route>
                         <Route path='/contact'>
