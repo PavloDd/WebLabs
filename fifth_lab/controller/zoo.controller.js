@@ -61,7 +61,7 @@ class ZooController{
     async updateZoo(req, res){
         const {id,name, location, area, capacity} = req.body;
         const updateZoo = await db.query(
-            `UPDATE zoos SET name = $1, location = $2, area = $3, capacity = $4 WHERE id= $5 RETURNING *`,
+            `UPDATE zoos SET name = ?, location = ?, area = ?, capacity = ? WHERE id= ? RETURNING *`,
             [name, location, area, capacity, id]
         );
         res.json(updateZoo.rows[0]);

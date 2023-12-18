@@ -1,6 +1,6 @@
 const initialState = {
-  items: [], // тут ти тримаєш масив айтемів
-  itemQuantities: {}, // об'єкт для збереження кількості кожного айтема
+  items: [],
+  itemQuantities: {}, 
 };
 
 const itemsReducer = (state = initialState, action) => {
@@ -52,7 +52,7 @@ const itemsReducer = (state = initialState, action) => {
         itemQuantities: decreasedQuantities,
       };
 
-    // інші кейси
+    
     default:
       return state;
   }

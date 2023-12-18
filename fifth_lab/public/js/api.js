@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:5501/api";
+const BASE_URL = "http://localhost:3000/api";
 
 const baseRequest = async ({
     pathUrl = "/zoos",
